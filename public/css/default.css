@@ -1,0 +1,73 @@
+#header, #main {
+    width: 100%;
+}
+
+/****** .top-main***********/
+
+.top-main {
+    padding-bottom: 20px;
+}
+
+.add-btn {
+    display: block;
+    float: right;
+    font-size: 2em;
+}
+
+/****** .bottom-main***********/
+
+.list-table:hover {
+    cursor: pointer;
+}
+
+.list-table tbody tr:hover {
+    color: white;
+    background-color: #c7ddef;
+}
+
+.edit-book {
+    display: inline-block;
+    float: right;
+    color: #2ECC40;
+    font-size: 1.5em;
+    padding-left: 25px;
+}
+
+.edit-book:hover {
+    color: #99979c;
+}
+
+.tool-tip {
+    visibility: hidden;
+    z-index: 100;
+    position: absolute;
+    background: #fff;
+    width: 150px;
+    height: 150px;
+}
+
+.tool-tip img {
+    width: 100%;
+}
+
+.list-table h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.pagination-wrapper {
+    margin: 0 auto;
+    width: 15%;
+}
+
+.pagination-wrapper .pagination .pagination-active {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.td-title:hover .book-content {
+    font-weight: bold;
+}
