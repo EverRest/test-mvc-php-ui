@@ -4,12 +4,12 @@
             <div class="row">
             <form enctype="multipart/form-data" action="<?= URL . 'store/' . $data['book']['id'] ;?>" method="POST" id="edit-form" class="col-md-12">
                 <div class="form-group">
-                    <label for="title">Title</label>
+                    <label for="title"><?= !empty($data['errors']['messages']['title'])? '<span class="valid-errors">' . $data['errors']['messages']['title'] . '</span>' : 'Title'; ?></label>
                     <input type="text" name="title" class="form-control" id="title" placeholder="<?= $data['book']['title'] ;?>" value="<?= $data['book']['title'] ;?>" required>
                 </div>
                 <input type="hidden" name="book_id" value="<?= $data['book']['id'] ;?>">
                 <div class="form-group">
-                    <label for="author">Author</label>
+                    <label for="author"><?= !empty($data['errors']['messages']['author'])? '<span class="valid-errors">' . $data['errors']['messages']['author'] . '</span>' : 'Author'; ?></label>
                     <select class="form-control" name="author" id="author" required>
                         <?php if(!empty($data['authors'])): ?>
                             <?php foreach ($data['authors'] as $author): ?>
@@ -19,7 +19,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="genre">Genre</label>
+                    <label for="genre"><?= !empty($data['errors']['messages']['genre'])? '<span class="valid-errors">' . $data['errors']['messages']['genre'] . '</span>' : 'Genre';?></label>
                     <select class="form-control" name="genre" id="genre" required>
                         <?php if(!empty($data['genres'])): ?>
                             <?php foreach ($data['genres'] as $genre): ?>
@@ -29,20 +29,20 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="lang">Language</label>
-                    <input type="text" name="lang" class="form-control" id="lang" placeholder="<?= $data['book']['language'] ;?>" value="<?= $data['book']['language'] ;?>" required>
+                    <label for="lang"><?= !empty($data['errors']['messages']['lang'])? '<span class="valid-errors">' . $data['errors']['messages']['lang'] . '</span>' : 'Language';?></label>
+                    <input type="text" name="lang" class="form-control" id="lang" placeholder="<?= !empty($data['book']['language'])? $data['book']['language'] : $data['book']['lang'] ;?>" value="<?= !empty($data['book']['language'])? $data['book']['language'] : $data['book']['lang'] ;?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="date">Year</label>
-                    <input type="text" name="date" class="form-control" id="date" placeholder="<?= $data['book']['year'] ;?>" value="<?= $data['book']['year'] ;?>" required>
+                    <label for="date"><?= !empty($data['errors']['messages']['date'])? '<span class="valid-errors">' . $data['errors']['messages']['date'] . '</span>' : 'Year';?></label>
+                    <input type="text" name="date" class="form-control" id="date" placeholder="<?= !empty($data['book']['year'])? $data['book']['year'] : $data['book']['date'] ;?>" value="<?= !empty($data['book']['year'])? $data['book']['year'] : $data['book']['date'] ;?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="photo">Photo</label>
+                    <label for="photo"><?= !empty($data['errors']['messages']['photo'])? '<span class="valid-errors">' . $data['errors']['messages']['photo'] . '</span>' : 'Photo';?></label>
                     <input type="file" name="photo" class="form-control-file" id="photo">
                 </div>
                 <div class="form-group">
-                    <label for="isbn">ISBN Code</label>
-                    <input type="text" name="isbn" class="form-control" id="isbn" required placeholder="<?= $data['book']['code'] ;?>"  value="<?= $data['book']['code'] ;?>">
+                    <label for="isbn"><?= !empty($data['errors']['messages']['isbn'])? '<span class="valid-errors">' . $data['errors']['messages']['isbn'] . '</span>' : 'ISBN Code';?></label>
+                    <input type="text" name="isbn" class="form-control" id="isbn" required placeholder="<?= !empty($data['book']['code'])? $data['book']['code'] : $data['book']['isbn'] ;?>"  value="<?= !empty($data['book']['code'])? $data['book']['code'] : $data['book']['isbn'] ;?>">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

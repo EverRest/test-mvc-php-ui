@@ -8,6 +8,7 @@ class Genre_Model extends Model
     protected $language;
     protected $date;
     protected $isbn;
+
     /**
      * Book_Model constructor.
      * return void
@@ -18,7 +19,7 @@ class Genre_Model extends Model
     }
 
     /**
-     * get name by id
+     * get genre name by id
      * @param $id
      * @return mixed name
      */
@@ -80,9 +81,14 @@ class Genre_Model extends Model
      */
     public function all()
     {
-        $sth = $this->db->prepare('SELECT * FROM genres');
-        $sth->execute();
-        return $sth->fetchAll();
+        try {
+            $sth = $this->db->prepare('SELECT * FROM genres');
+            $sth->execute();
+            return $sth->fetchAll();
+        }
+        catch (Exception $e) {
+                echo 'Model error: ',  $e->getMessage(), "\n";
+            }
     }
 }
 ?>

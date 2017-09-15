@@ -13,7 +13,7 @@
 <script src="<?= URL; ?>vendor/components/jquery/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?= URL; ?>vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="<?= URL; ?>vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="<?= URL; ?>public/js/jquery-validation/jquery.validate.min.js"></script>
 <script src="<?= URL; ?>public/js/validation.js"></script>
 <script src="<?= URL; ?>public/js/sortByTitle.js"></script>
 <script src="<?= URL; ?>public/js/search.js"></script>

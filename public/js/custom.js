@@ -48,4 +48,8 @@ $(document).ready(function (){
 
     });
 
+
+    // error validation
+
+    $('.valid-errors').css({'color': 'red','font-weight' : 'bold'});
 });

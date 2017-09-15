@@ -79,9 +79,14 @@ class Author_Model extends Model
      */
     public function all()
     {
-        $sth = $this->db->prepare('SELECT * FROM authors');
-        $sth->execute();
-        return $sth->fetchAll();
+        try {
+            $sth = $this->db->prepare('SELECT * FROM authors');
+            $sth->execute();
+            return $sth->fetchAll();
+        }
+        catch (Exception $e) {
+            echo 'Model error: ',  $e->getMessage(), "\n";
+        }
     }
 }
 ?>

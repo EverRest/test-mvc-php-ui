@@ -9,6 +9,7 @@ class Book_Model extends Model
     protected $language;
     protected $date;
     protected $isbn;
+
     /**
      * Book_Model constructor.
      * return void
