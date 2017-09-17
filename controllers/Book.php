@@ -69,7 +69,13 @@ class Book extends Controller
 
             $genres = $this->gmodel->getNames();
             $authors = $this->amodel->getNames();
-            $this->view->assign(array('book' => $book, 'genres' => $genres, 'authors' => $authors));
+            $this->view->assign(
+                array(
+                    'book' => $book,
+                    'genres' => $genres,
+                    'authors' => $authors
+                )
+            );
 
             $this->view->render('book/edit');
         } else {
@@ -92,7 +98,13 @@ class Book extends Controller
 
             $genres = $this->gmodel->getNames();
             $authors = $this->amodel->getNames();
-            $this->view->assign(array('book' => $book, 'genres' => $genres, 'authors' => $authors));
+            $this->view->assign(
+                array(
+                    'book' => $book,
+                    'genres' => $genres,
+                    'authors' => $authors
+                )
+            );
 
             $this->view->render('book/detail');
         } else {

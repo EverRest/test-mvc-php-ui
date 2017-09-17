@@ -49,7 +49,27 @@ $(document).ready(function (){
     });
 
 
-    // error validation
+    // display error messages and change url string
+    var errors = $('.valid-errors'),
+        url = false;
 
-    $('.valid-errors').css({'color': 'red','font-weight' : 'bold'});
+    if (errors.length) {
+        errors.css({'color': 'red','font-weight' : 'bold'});
+        url = window.location.href;
+        var book_id = $('#book_id').length ? $('#book_id').val() : false;
+        url = url.split('/');
+
+        // check is edit or create form
+        if (book_id) {
+            url.length -=2;
+            url = url.join('/');
+            url += '/edit/' + book_id;
+        } else {
+            url.length -=1;
+            url = url.join('/');
+            url += '/create';
+        }
+        console.log(url);
+        window.history.pushState("", "", url);
+    }
 });
