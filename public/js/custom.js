@@ -69,7 +69,6 @@ $(document).ready(function (){
             url = url.join('/');
             url += '/create';
         }
-        console.log(url);
         window.history.pushState("", "", url);
     }
 });

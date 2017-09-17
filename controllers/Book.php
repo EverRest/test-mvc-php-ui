@@ -130,11 +130,14 @@ class Book extends Controller
 
             // cleaning POST array
             $post = XSS::clean($_POST);
+//            if(!empty($_FILES['photo'])) $post['file'] = $_FILES['photo']['name'];
 
             // check for create new or update book
             if($id)
             {
+                $errors = Validator::editForm($post);
                 $location = false;
+                $post['book_id'] = $id;
 
                 if (!empty($_FILES) && $_FILES['photo']['error'] == 0)
                 {
@@ -166,7 +169,34 @@ class Book extends Controller
                     }
 
                     if ($errors['count'] == 0) {
+//                        echo '<pre>';print_r($post);exit;
                         //save new book
+
+                        if(empty($post['author_id']))
+                        {
+                            $post['author_id'] = $post['author'];
+                        }
+                        if(empty($post['genre_id']))
+                        {
+                            $post['author_id'] = $post['genre'];
+                        }
+                        if(empty($post['language']))
+                        {
+                            $post['language'] = $post['lang'];
+                        }
+                        if(empty($post['code']))
+                        {
+                            $post['code'] = $post['isbn'];
+                        }
+                        if(empty($post['date']))
+                        {
+                            $post['date'] = $post['year'];
+                        }
+                        if(empty($post['book_id']))
+                        {
+                            $post['book_id'] = $post['id'];
+                        }
+
                         $this->bmodel->update($post);
                         Helper::redirect('');
                     } else {
@@ -217,8 +247,9 @@ class Book extends Controller
 
             } else {
 
+                $errors = Validator::createForm($post);
                 //upload picture
-                if (!empty($_FILES) && $_FILES['file']['error'] == 0) {
+                if (!empty($_FILES) && $_FILES['photo']['error'] == 0) {
                     $name = $_FILES['photo']['name'];
                     $size = $_FILES['photo']['size'];
                     $type = $_FILES['photo']['type'];

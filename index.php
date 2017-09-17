@@ -9,6 +9,7 @@
     include 'libs/Database.php';
     include 'libs/Helper.php';
     include 'libs/Xss.php';
+    include 'libs/Validator.php';
     include 'libs/Session.php';
 
     Session::init();

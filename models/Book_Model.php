@@ -65,14 +65,15 @@ class Book_Model extends Model
      */
     public function update($book = array())
     {
+
         $this->title = !empty($book['title'])? $book['title'] : NULL;
         $this->author_id = !empty($book['author'])? $book['author'] : 0;
         $this->genre_id = !empty($book['genre'])? $book['genre'] : 0;
-        $this->photo = !empty($book['photo'])? $book['photo'] : NULL;
+        $this->photo = !empty($book['photo'])? $book['photo'] : false;
         $this->language = !empty($book['lang'])? $book['lang'] : NULL;
         $this->date = !empty($book['date'])? $book['date'] : 0;
         $this->isbn = !empty($book['isbn'])? $book['isbn'] : NULL;
-        $this->id = !empty($book['book_id'])? $book['book_id'] : 0;
+        $this->id = !empty($book['book_id'])? $book['book_id'] : $book['id'];
 
         try {
             if (!empty($book['photo'])) {
@@ -83,7 +84,7 @@ class Book_Model extends Model
                     'language = :language, year = :year, code = :isbn ';
             }
 
-            $sql = "UPDATE books SET  {$stmt}  WHERE id = :book_id";
+            $sql = "UPDATE books SET  {$stmt}  WHERE id = :book_id LIMIT 1";
 
             $sth = $this->db->prepare($sql);
 
@@ -96,6 +97,10 @@ class Book_Model extends Model
             $sth->bindParam(':isbn', $this->isbn, PDO::PARAM_STR);
             $sth->bindParam(':book_id', $this->id, PDO::PARAM_INT);
 
+//            die($sql);
+
+
+//            echo '<pre>';print_r($this);exit;
             $sth->execute();
         } catch (Exception $e) {
             echo 'Model error: ',  $e->getMessage(), "\n";
