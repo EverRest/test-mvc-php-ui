@@ -173,7 +173,7 @@ function displayPaginationResult(data) {
             book = books[i];
             url = $('tbody').data('url');
 
-            content +="<tr id='book-" + book.id + "' data-img=" + url + book.photo +" class='book-row'>";
+            content +="<tr id='book-" + i + "' data-img=" + url + book.photo +" class='book-row'>";
             content +="<td class='td-title'><span class='book-content'>" + book.title +
                 "</span><a class='edit-book' style='display: none;' href='" + url + "edit/" + book.id + "'>" +
                 "<span class='glyphicon glyphicon-pencil'></span></a></td>";
