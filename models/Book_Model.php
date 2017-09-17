@@ -67,8 +67,8 @@ class Book_Model extends Model
     {
 
         $this->title = !empty($book['title'])? $book['title'] : NULL;
-        $this->author_id = !empty($book['author'])? $book['author'] : 0;
-        $this->genre_id = !empty($book['genre'])? $book['genre'] : 0;
+        $this->author_id = !empty($book['author'])? $book['author'] : $book['author_id'];
+        $this->genre_id = !empty($book['genre'])? $book['genre'] : $book['genre_id'];
         $this->photo = !empty($book['photo'])? $book['photo'] : false;
         $this->language = !empty($book['lang'])? $book['lang'] : NULL;
         $this->date = !empty($book['date'])? $book['date'] : 0;
@@ -77,11 +77,21 @@ class Book_Model extends Model
 
         try {
             if (!empty($book['photo'])) {
-                $stmt = 'author_id = :author, genre_id = :genre, title = :title, photo = :photo,' .
-                'language = :language, year = :year, code = :isbn, ';
+                $stmt = 'author_id.id = :author,' .
+                        'genre_id.id = :genre, ' .
+                        'title = :title, ' .
+                        'photo = :photo,' .
+                        'language = :language, ' .
+                        ' year = :year, ' .
+                        'code = :isbn, ';
             } else {
-                $stmt = 'author_id = :author, genre_id = :genre, title = :title, ' .
-                    'language = :language, year = :year, code = :isbn ';
+                $stmt =
+                        'author_id = :author, ' .
+                        'genre_id = :genre, ' .
+                        'title = :title, ' .
+                        'language = :language, ' .
+                        'year = :year, ' .
+                        'code = :isbn ';
             }
 
             $sql = "UPDATE books SET  {$stmt}  WHERE id = :book_id LIMIT 1";

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d012360b-18be-49b7-a7fb-339a6520e183" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/Validator.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/Book.php" afterPath="$PROJECT_DIR$/controllers/Book.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Book_Model.php" afterPath="$PROJECT_DIR$/models/Book_Model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/custom.js" afterPath="$PROJECT_DIR$/public/js/custom.js" />
     </list>
     <ignored path="uploader.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,18 +82,18 @@
       <file leaf-file-name="Book_Model.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/Book_Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="103" column="28" lean-forward="true" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
+            <state relative-caret-position="643">
+              <caret line="102" column="26" lean-forward="false" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
               <folding>
-                <marker date="1505661092697" expanded="true" signature="1017:1210" ph="INSERT INTO books... " />
-                <marker date="1505661092697" expanded="true" signature="3029:3075" ph="UPDATE books... " />
-                <marker date="1505661092697" expanded="true" signature="3029:3083" ph="UPDATE books... " />
-                <marker date="1505661092697" expanded="true" signature="4106:4149" ph="SELECT * FRO... books" />
-                <marker date="1505661092697" expanded="true" signature="4583:4629" ph="SELECT * FRO... books" />
-                <marker date="1505661092697" expanded="true" signature="4995:5051" ph="SELECT * FRO... books" />
-                <marker date="1505661092697" expanded="true" signature="5450:5510" ph="SELECT * FRO... books" />
-                <marker date="1505661092697" expanded="true" signature="5912:5939" ph="SELECT COUNT... books" />
-                <marker date="1505661092697" expanded="true" signature="6317:6378" ph="SELECT * FRO... books" />
+                <marker date="1505665356590" expanded="true" signature="1017:1210" ph="INSERT INTO books... " />
+                <marker date="1505665356590" expanded="true" signature="3365:3411" ph="UPDATE books... " />
+                <marker date="1505665356590" expanded="true" signature="3365:3419" ph="UPDATE books... " />
+                <marker date="1505665356590" expanded="true" signature="4442:4485" ph="SELECT * FRO... books" />
+                <marker date="1505665356590" expanded="true" signature="4919:4965" ph="SELECT * FRO... books" />
+                <marker date="1505665356590" expanded="true" signature="5331:5387" ph="SELECT * FRO... books" />
+                <marker date="1505665356590" expanded="true" signature="5786:5846" ph="SELECT * FRO... books" />
+                <marker date="1505665356590" expanded="true" signature="6248:6275" ph="SELECT COUNT... books" />
+                <marker date="1505665356590" expanded="true" signature="6653:6714" ph="SELECT * FRO... books" />
               </folding>
             </state>
           </provider>
@@ -354,7 +350,7 @@
       <workItem from="1504944555129" duration="36514000" />
       <workItem from="1504989875563" duration="87760000" />
       <workItem from="1505491994005" duration="12306000" />
-      <workItem from="1505648957437" duration="11878000" />
+      <workItem from="1505648957437" duration="16215000" />
     </task>
     <task id="LOCAL-00001" summary="production debug v.0.2 commit">
       <created>1486487194966</created>
@@ -437,7 +433,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179856000" />
+    <option name="totallyTimeSpent" value="184193000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
@@ -837,18 +833,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Book_Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="103" column="28" lean-forward="true" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
+        <state relative-caret-position="643">
+          <caret line="102" column="26" lean-forward="false" selection-start-line="102" selection-start-column="26" selection-end-line="102" selection-end-column="26" />
           <folding>
-            <marker date="1505661092697" expanded="true" signature="1017:1210" ph="INSERT INTO books... " />
-            <marker date="1505661092697" expanded="true" signature="3029:3075" ph="UPDATE books... " />
-            <marker date="1505661092697" expanded="true" signature="3029:3083" ph="UPDATE books... " />
-            <marker date="1505661092697" expanded="true" signature="4106:4149" ph="SELECT * FRO... books" />
-            <marker date="1505661092697" expanded="true" signature="4583:4629" ph="SELECT * FRO... books" />
-            <marker date="1505661092697" expanded="true" signature="4995:5051" ph="SELECT * FRO... books" />
-            <marker date="1505661092697" expanded="true" signature="5450:5510" ph="SELECT * FRO... books" />
-            <marker date="1505661092697" expanded="true" signature="5912:5939" ph="SELECT COUNT... books" />
-            <marker date="1505661092697" expanded="true" signature="6317:6378" ph="SELECT * FRO... books" />
+            <marker date="1505665356590" expanded="true" signature="1017:1210" ph="INSERT INTO books... " />
+            <marker date="1505665356590" expanded="true" signature="3365:3411" ph="UPDATE books... " />
+            <marker date="1505665356590" expanded="true" signature="3365:3419" ph="UPDATE books... " />
+            <marker date="1505665356590" expanded="true" signature="4442:4485" ph="SELECT * FRO... books" />
+            <marker date="1505665356590" expanded="true" signature="4919:4965" ph="SELECT * FRO... books" />
+            <marker date="1505665356590" expanded="true" signature="5331:5387" ph="SELECT * FRO... books" />
+            <marker date="1505665356590" expanded="true" signature="5786:5846" ph="SELECT * FRO... books" />
+            <marker date="1505665356590" expanded="true" signature="6248:6275" ph="SELECT COUNT... books" />
+            <marker date="1505665356590" expanded="true" signature="6653:6714" ph="SELECT * FRO... books" />
           </folding>
         </state>
       </provider>
