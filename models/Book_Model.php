@@ -77,8 +77,9 @@ class Book_Model extends Model
 
         try {
             if (!empty($book['photo'])) {
-                $stmt = 'author_id.id = :author,' .
-                        'genre_id.id = :genre, ' .
+                $stmt =
+//                    'author_id = :author,' .
+//                        'genre_id = :genre, ' .
                         'title = :title, ' .
                         'photo = :photo,' .
                         'language = :language, ' .
@@ -86,8 +87,8 @@ class Book_Model extends Model
                         'code = :isbn, ';
             } else {
                 $stmt =
-                        'author_id = :author, ' .
-                        'genre_id = :genre, ' .
+//                    'author_id = :author, ' .
+//                        'genre_id = :genre, ' .
                         'title = :title, ' .
                         'language = :language, ' .
                         'year = :year, ' .
@@ -98,8 +99,8 @@ class Book_Model extends Model
 
             $sth = $this->db->prepare($sql);
 
-            $sth->bindParam(':author', $this->author_id, PDO::PARAM_INT);
-            $sth->bindParam(':genre', $this->genre_id, PDO::PARAM_INT);
+//            $sth->bindParam(':author', $this->author_id, PDO::PARAM_INT);
+//            $sth->bindParam(':genre', $this->genre_id, PDO::PARAM_INT);
             $sth->bindParam(':title', $this->title, PDO::PARAM_STR);
             $sth->bindParam(':language', $this->language, PDO::PARAM_STR);
             if (!empty($book['photo'])) $sth->bindParam(':photo', $this->photo, PDO::PARAM_STR);

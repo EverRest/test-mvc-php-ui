@@ -130,9 +130,7 @@ class Book extends Controller
 
             // cleaning POST array
             $post = XSS::clean($_POST);
-//            if(!empty($_FILES['photo'])) $post['file'] = $_FILES['photo']['name'];
 
-            // check for create new or update book
             if($id)
             {
                 $errors = Validator::editForm($post);
@@ -169,8 +167,6 @@ class Book extends Controller
                     }
 
                     if ($errors['count'] == 0) {
-//                        echo '<pre>';print_r($post);exit;
-                        //save new book
 
                         if(empty($post['author_id']))
                         {
@@ -279,9 +275,6 @@ class Book extends Controller
                             } else {
                                 $book = $post;
 
-//                                $book['author'] = $this->amodel->getName($book['author_id']);
-//                                $book['genre'] = $this->gmodel->getName($book['genre_id']);
-
                                 $genres = $this->gmodel->getNames();
                                 $authors = $this->amodel->getNames();
                                 $this->view->assign(
@@ -292,13 +285,6 @@ class Book extends Controller
                                         'errors' => $errors
                                     )
                                 );
-
-//                                echo '<pre>';print_r(array(
-//                                    'book' => $book,
-//                                    'genres' => $genres,
-//                                    'authors' => $authors,
-//                                    'errors' => $errors
-//                                ));exit;
 
                                 $this->view->render('book/create');
                             }

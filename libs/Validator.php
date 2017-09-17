@@ -8,15 +8,15 @@
  */
 class Validator
 {
-//    protected static $messages = array();
-//    protected static $count = 0;
-
+    /**
+     * validate create-form
+     * @param array $post
+     * @return array $errors
+     */
     public static function createForm( $post = array() )
     {
         $count = 0;
         $messages = array();
-//        echo '<pre>createForm' . '<br>';
-//        print_r($post);exit;
 
         if(empty($post['title']))
         {
@@ -63,12 +63,15 @@ class Validator
         );
     }
 
+    /**
+     * validate edit-form
+     * @param array $post
+     * @return array $errors
+     */
     public static function editForm( $post = array() )
     {
         $count = 0;
         $messages = array();
-//        echo '<pre>editForm' . '<br>';
-//        var_dump(self::isbn13($post['isbn']));exit;
 
 
         if(empty($post['title']))
@@ -110,11 +113,6 @@ class Validator
             $messages['isbn'] = "Code is not valid by standart ISBN13";
         }
 
-//        echo '<pre>editForm' . '<br>';
-//        print_r(array(
-//            'count' => self::$count,
-//            'messages' => self::$messages
-//        ));exit;
         return array(
             'count' => $count,
             'messages' => $messages
@@ -125,6 +123,12 @@ class Validator
     {
 
     }
+
+    /**
+     * isbn-13 validation
+     * @param string $str
+     * @return bool $res
+     */
 
     protected static function isbn13($str)
     {
